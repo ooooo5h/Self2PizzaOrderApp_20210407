@@ -19,7 +19,10 @@ class StoreListAdapter(
 
         var tempRow = convertView
         if(tempRow == null) {
-//            tempRow = inflater.inflate(R.layout.)
+            tempRow = inflater.inflate(R.layout.store_list_item, null)
         }
+        val row = tempRow!!
+
+        return row
     }
 }
