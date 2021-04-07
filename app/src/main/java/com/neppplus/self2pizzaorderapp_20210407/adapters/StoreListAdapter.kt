@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.neppplus.self2pizzaorderapp_20210407.R
 import com.neppplus.self2pizzaorderapp_20210407.Store
 
@@ -32,6 +33,7 @@ class StoreListAdapter(
         val nameTxt = row.findViewById<TextView>(R.id.nameTxt)
 
 
+        Glide.with()
         nameTxt.text = clickedStore.name
 
         return row
