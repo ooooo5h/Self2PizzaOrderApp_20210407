@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.neppplus.self2pizzaorderapp_20210407.R
 import com.neppplus.self2pizzaorderapp_20210407.Store
+import com.neppplus.self2pizzaorderapp_20210407.adapters.StoreListAdapter
+import kotlinx.android.synthetic.main.fragment_pizza_store_list.*
 
 class MyProfileFragment : Fragment() {
 
     val mStoreList = ArrayList<Store>()
+
+    lateinit var mAdapter : StoreListAdapter
 
 
 
@@ -30,5 +34,7 @@ class MyProfileFragment : Fragment() {
         mStoreList.add( Store("미스터피자", "https://post-phinf.pstatic.net/MjAxODEyMDVfMzYg/MDAxNTQzOTYxOTA4NjM3.8gsStnhxz7eEc9zpt5nmSRZmI-Pzpl4NJvHYU-Dlgmcg.7Vpgk0lopJ5GoTav3CUDqmXi2-_67S5AXD0AGbbR6J4g.JPEG/IMG_1641.jpg?type=w1200", "1577-0077" ))
         mStoreList.add( Store("도미노피자", "https://pbs.twimg.com/profile_images/1098371010548555776/trCrCTDN_400x400.png", "1577-3082" ))
 
+        mAdapter = StoreListAdapter(activity!!, R.layout.store_list_item, mStoreList)
+        storeListView.adapter = mAdapter
     }
 }
