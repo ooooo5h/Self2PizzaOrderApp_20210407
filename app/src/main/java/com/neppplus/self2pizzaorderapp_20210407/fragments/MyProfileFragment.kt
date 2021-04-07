@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.neppplus.self2pizzaorderapp_20210407.R
 import com.neppplus.self2pizzaorderapp_20210407.Store
 import com.neppplus.self2pizzaorderapp_20210407.adapters.StoreListAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_pizza_store_list.*
 
 class MyProfileFragment : Fragment() {
@@ -36,5 +37,7 @@ class MyProfileFragment : Fragment() {
 
         mAdapter = StoreListAdapter(activity!!, R.layout.store_list_item, mStoreList)
         storeListView.adapter = mAdapter
+
+        mainTabLayout.setupWithViewPager(mainViewPager)
     }
 }
